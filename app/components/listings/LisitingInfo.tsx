@@ -7,6 +7,7 @@ import Avatar from "../Avatar";
 import { ListingCategory } from "./ListingCategory";
 import dynamic from "next/dynamic";
 import { MapProps } from "../Map";
+import { SafeUser } from "@/types";
 
 const Map = dynamic<MapProps>(
   () => import("../Map").then((module) => module.Map),
@@ -16,7 +17,7 @@ const Map = dynamic<MapProps>(
 );
 
 interface LisitingInfoProps {
-  user: User;
+  user: SafeUser;
   description: string;
   guestCount: number;
   roomCount: number;
