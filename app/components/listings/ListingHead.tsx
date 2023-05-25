@@ -5,13 +5,14 @@ import { Heading } from "../Heading";
 import Image from "next/image";
 import { HeartButton } from "../HeartButton";
 import { User } from "@prisma/client";
+import { SafeUser } from "@/types";
 
 interface LisitingHeadProps {
   title: string;
   locationValue: string;
   imageSrc: string;
   id: string;
-  currentUser?: User | undefined | null;
+  currentUser?: SafeUser | undefined | null;
 }
 export const ListingHead: React.FC<LisitingHeadProps> = ({
   title,
